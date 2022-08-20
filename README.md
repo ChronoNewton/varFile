@@ -30,8 +30,8 @@ A ".var" file, is a file type, which use is to store all sorts of variable data/
 ## How To Make ".var" File
 
 There are two ways to create:
-- 1- Manualy (User):
+- 1- Manualy (User):<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Any text editor will do the job just fine.
 
-- 2- Programmatically (Program/Code)
+- 2- Programmatically (Program/Code):<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using the varFile library(this library).
