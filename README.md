@@ -14,7 +14,6 @@ A ".var" file, is a file type, which use is to store all sorts of variable data/
 
 - A 'variable' or 'var' is a whole line for itself alone in the system file.
 - A 'key' is a part of a variable, that is a unique name to identify the variable itself.
-- A var has a value called 'Value'
 - A 'value' is a part of a variable, that is any data/information that follows the variable's name and its initializer(A mark to identify the value being declared)
 
 
