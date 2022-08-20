@@ -35,3 +35,7 @@ There are two ways to create:
 
 - 2- Programmatically (Program/Code):<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using the varFile library(this library).
+
+
+## Support Me
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/ChronoNewton)
