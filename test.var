@@ -1,0 +1,7 @@
+IP=127.0.0.1
+port=1024
+
+id:01
+NAME	alex
+description:\tHello, World!\nbye!
+idk		\n\t\r
