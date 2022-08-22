@@ -1,3 +1,6 @@
+from dataclasses import replace
+
+
 class varFile:
     isKey_CaseSensitive = None
     
@@ -69,17 +72,23 @@ class varFile:
                 if(var_line_text[i] != '=' and var_line_text[i] != ':' and var_line_text[i] != '\t'):
                     part_key += var_line_text[i]
                 else:
-                    section_part='2'
-                    part_initializer=var_line_text[i]
+                    #section_part='2'
+                    part_initializer=var_line_text[i] # here section part 2 is completed, then proceed to section part 3
                     section_part='3'
                 
             elif(section_part=='3'):
                 part_value+=var_line_text[i]
         
-        
-
-        
         return [part_key.strip(), part_initializer, part_value.strip()]
+    
+    
+
+
+#
+#
+#            HERE starts the ".var" file data mainpulation functions
+#
+#
     
     
     def getValueByKey(self, key):
@@ -102,14 +111,51 @@ class varFile:
         return self.getVarParts(self.varFileLines[line_number-1])[2]
     
     
+    
+    
+    
+    
+    def setValueByKey(self, key, value):
+        for i in range(len(self.varFileLines)):
+            if(self.isKey_CaseSensitive==False):#if option 'isKey_CaseSensitive' false, then the search will be case-INsensitive
+                if(self.varFileLines[i].lower().startswith(key.lower())):
+                    self.varFileLines[i] = value
+                    break
+            
+            else:#else then the search will be case-sensitive
+                if(self.varFileLines[i].startswith(key)):
+                    self.varFileLines[i] = value
+                    break
+        
+        self.getVarFileText(self)#regenerate 'varFileText' from the list 'varFileLines'
+        
+    
+    
+    def setValueByLineNumber(self, line_number, value):
+        self.varFileLines[line_number-1] = value
+        
+        self.getVarFileText(self)#regenerate 'varFileText' from the list 'varFileLines'
+    
+    
+    
+    
+    
+    
+    
+    
     def getVarByLineNumber(self, line_number):
         return self.getVarParts(self.varFileLines[line_number-1])
     
     
     
     
+    
+    
+    
     def getAbsLineAt(self, line_number):
         return self.varFileLines[line_number-1]
+    
+    
     
     
     #        absolute line (e.g. "name: alex"  OR can be a comment "--this' a comment" )
@@ -119,28 +165,60 @@ class varFile:
         else:# if 'line_number' is > 0 then make it at the specified position line (e.g. 'line_number' is 1, then it will be the fist line..., and so for 2, second line)
             self.varFileLines.insert(line_number-1, abs_line)
 
-        self.varFileText = self.getVarFileText(self)#regenerate 'varFileText' from the list 'varFileLines'
+        self.getVarFileText(self)#regenerate 'varFileText' from the list 'varFileLines'
+        
+        
+        
+        
+    def replaceAbsLineByLineNumber(self, line_number, replace_with):
+        self.varFileLines[line_number-1] = replace_with
+        self.getVarFileText(self)
+        
+    
 
+
+    def removeAbsLineByKey(self, key):# can be only used to remove variables(e.g. "name=alex")
+        for i in range(len(self.varFileLines)):
+            if(self.isKey_CaseSensitive==False):#if option 'isKey_CaseSensitive' false, then the search will be case-INsensitive
+                if(self.varFileLines[i].lower().startswith(key.lower())):
+                    del self.varFileLines[i]
+                    break
+            
+            else:#else then the search will be case-sensitive
+                if(self.varFileLines[i].startswith(key)):
+                    del self.varFileLines[i]
+                    break
+        
+        self.getVarFileText(self)#regenerate 'varFileText' from the list 'varFileLines'
+        
+        
 
     def removeAbsLineByLineNumber(self, line_number):# can be used to remove either variables(e.g. "name=alex")  OR comments
         del self.varFileLines[line_number-1]
-        self.varFileText = self.getVarFileText(self)#regenerate 'varFileText' from the list 'varFileLines'
+        self.getVarFileText(self)#regenerate 'varFileText' from the list 'varFileLines'
         
         
-    def removeAbsLineByKey(self, key):# can be only used to remove variables(e.g. "name=alex")
-        for i in range(len(self.varFileLines)):
-            if(self.varFileLines[i].startswith(key)):
-                del self.varFileLines[i]
-                break
-        
-        self.varFileText = self.getVarFileText(self)#regenerate 'varFileText' from the list 'varFileLines'
-        
+
+    
     
     
     # no need for this any more since function 'appendAbsLineAt()' exists and is all comprehensive and shiny lol
     #       var line (e.g. ['name'],[':'],['alex'])
     #def appendVarLine(self, var_line, line_number=''):
     #    pass
+    
+    
+    
+#
+#
+#            HERE ends the ".var" file data mainpulation functions
+#
+#
+    
+    
+    
+    
+    
     
     
     
