@@ -1,7 +1,12 @@
-IP=127.0.0.1
-port=1024
+#This is a comment using '#'
+--This is a comment using '--'
+//This is a comment using '//'
 
-id:01
-NAME	alex
-description:\tHello, World!\nbye!
-idk		\n\t\r
+NAME  alex
+
+IP = 127.0.0.1
+port: 1024
+
+
+# Note: string encoding and decoding... what I mean is strings that contain bytes such as the tab(\t) and newline(\n) are NOT implemented
+# and so is for the custom bytes encoding and decoding, 'b[010101]' & 'h[FF]' this is not implemented yet
