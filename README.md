@@ -2,6 +2,18 @@
 
 Var File is a light-wight cross-platform library, that comes in *different coding languages(not yet), it's designed with the sole purpose to handle the creation and modification of a special file type, which it introduces as the "var file"(.var) .
 
+# ".var" File Example
+
+    #This is a comment using '#'
+    --This is a comment using '--'
+    //This is a comment using '//'
+
+    NAME  alex
+
+    IP = 127.0.0.1
+    port: 1024
+
+
 
 ## ".var" File Purpose
 A ".var" file, is a file type, which use is to store all sorts of variable data/information, in a way that's both easily user accessible & modifible, and computer ready to interpret & use fastly for variable data/information.(note: i just wrote that partially for the rhythm of the words)
