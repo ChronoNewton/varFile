@@ -2,7 +2,7 @@
 --This is a comment using '--'
 //This is a comment using '//'
 
-NAME  alex
+NAME	alex
 
 IP = 127.0.0.1
 port: 1024
