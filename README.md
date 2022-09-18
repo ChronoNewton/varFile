@@ -1,6 +1,6 @@
 # varFile
 
-Var File is a light-wight cross-platform library, that comes in *different coding languages(not yet), it's designed with the sole purpose to handle the creation and modification of a special file type, which it introduces as the "var file"(.var) .
+Var File is a light cross-platform library, that comes in *different coding languages(not yet), it's designed with the sole purpose to handle the creation and modification of a special file type, which it introduces as the "var file"(.var) .
 
 # ".var" File Example
 
