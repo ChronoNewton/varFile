@@ -1,6 +1,6 @@
 # varFile
 
-Var File is a light cross-platform library, that comes in *different coding languages(not yet), it's designed with the sole purpose to handle the creation and modification of a special file type, which it introduces as the "var file"(.var).
+VarFile is a light cross-platform library, that comes in *different coding languages(not yet), it's designed with the sole purpose to handle the creation and modification of a special file type, which it introduces as the "var file"(.var).
 
 > **Update**: After doing a performance comparison between varFile and JSON, and also some research, It turns out the latter is faster, so my bad, I thought this would be faster bc of the format, but no that wasnt the case, having comments and some else to look for & interpret makes overhead which..., I tried to get it to beat JSON, though, well after changing some stuff (the way things are handled), it managed to make something of a couple of milliseconds difference(slower by 2-4 ms), but I noticed that after that the access of data were messed up not(using dictionary rather than functions), so I sticked with this. Sorry for the bold claim
 
